@@ -52,4 +52,13 @@ public class UserService {
         }
         return null;
     }
+
+    public String deleteUser(int id){
+        User dbUser = userRepo.findById(id);
+        if(dbUser != null){
+            userRepo.deleteById(id);
+            return "user deleted";
+        }
+        return null;
+    }
 }

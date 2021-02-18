@@ -13,7 +13,12 @@ public class User extends PanacheEntity {
     public String email;
     public String password;
 
-    public static User findByName(String username){
-        return find("username", username).firstResult();
+    public static User findByEmail(String email){
+        return find("email", email).firstResult();
     }
+
+    public static void deleteUser(long id){
+        delete("id", id);
+    }
+
 }
