@@ -3,9 +3,8 @@ micronaut:
     name: lia_micronaut
 datasources:
   default:
-    url: jdbc:mysql://localhost:3306/liaproject_micronaut?&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/liaproject_micronaut
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: mysql
-    schema-generate: CREATE_DROP
     dialect: MYSQL

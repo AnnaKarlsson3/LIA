@@ -15,7 +15,7 @@
 
   <properties>
     <packaging>jar</packaging>
-    <jdk.version>15</jdk.version>
+    <jdk.version>11</jdk.version>
     <release.version>11</release.version>
     <micronaut.version>2.3.3</micronaut.version>
     <micronaut.openapi.version>2.3.1</micronaut.openapi.version>
@@ -79,6 +79,10 @@
     </dependency>
     <dependency>
       <groupId>io.micronaut.data</groupId>
+      <artifactId>micronaut-data-hibernate-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.data</groupId>
       <artifactId>micronaut-data-jdbc</artifactId>
       <scope>compile</scope>
     </dependency>
@@ -127,12 +131,7 @@
       <artifactId>jakarta.persistence-api</artifactId>
       <version>2.2.3</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/io.micronaut.spring/micronaut-spring-web -->
-    <dependency>
-      <groupId>io.micronaut.spring</groupId>
-      <artifactId>micronaut-spring-web</artifactId>
-      <version>3.1.0</version>
-    </dependency>
+
 
   </dependencies>
 
