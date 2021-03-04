@@ -12,15 +12,10 @@ import java.util.List;
 @Singleton
 public class UserService {
 
-    //private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-
-
     @Inject
     UserRepo userRepo;
 
     public User registerUser(User user){
-        //String password = encoder.encode(user.getPassword());
-        //user.setPassword(password);
         User dbUser = userRepo.findByEmail(user.getEmail());
         if(dbUser != null) {
             return null;

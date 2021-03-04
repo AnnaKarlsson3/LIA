@@ -8,3 +8,6 @@ datasources:
     username: root
     password: mysql
     dialect: MYSQL
+jpa:
+  default:
+    packages-to-scan: "com.example.entities"
