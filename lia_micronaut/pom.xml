@@ -15,7 +15,7 @@
 
   <properties>
     <packaging>jar</packaging>
-    <jdk.version>11</jdk.version>
+    <jdk.version>15</jdk.version>
     <release.version>11</release.version>
     <micronaut.version>2.3.3</micronaut.version>
     <micronaut.openapi.version>2.3.1</micronaut.openapi.version>
@@ -122,6 +122,18 @@
       <artifactId>mysql</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>jakarta.persistence</groupId>
+      <artifactId>jakarta.persistence-api</artifactId>
+      <version>2.2.3</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.micronaut.spring/micronaut-spring-web -->
+    <dependency>
+      <groupId>io.micronaut.spring</groupId>
+      <artifactId>micronaut-spring-web</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+
   </dependencies>
 
   <build>
