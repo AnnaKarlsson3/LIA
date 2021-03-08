@@ -7,7 +7,13 @@ datasources:
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: mysql
+    schema-generate: NONE
     dialect: MYSQL
+
 jpa:
   default:
+    properties:
+      hibernate:
+        bytecode:
+          provider: none
     packages-to-scan: "com.example.entities"

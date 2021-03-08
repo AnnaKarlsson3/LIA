@@ -9,6 +9,7 @@ import io.micronaut.http.annotation.*;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Controller("/rest/user")

@@ -16,15 +16,15 @@ public class UserService {
     UserRepo userRepo;
 
     public User registerUser(User user){
-        User dbUser = userRepo.findByEmail(user.getEmail());
+       /* User dbUser = userRepo.findByEmail(user.getEmail());
         if(dbUser != null) {
             return null;
-        }
+        }*/
         return userRepo.save(user);
     }
 
     public User loginUser(User user){
-        User dbUser = userRepo.findByEmail(user.getEmail());
+        User dbUser = userRepo.findById(user.getId());
         if(dbUser != null) {
             if (user.getPassword().equals(dbUser.getPassword())) {
                 return dbUser;
@@ -38,13 +38,10 @@ public class UserService {
     }
 
     public User updateUser(int id, User user){
+        userRepo.update(id, user.getUsername());
         User dbUser = userRepo.findById(id);
         if(dbUser != null){
-            dbUser.setUsername(user.getUsername());
-            dbUser.setEmail(user.getEmail());
-            dbUser.setPassword(user.getPassword());
-
-            return userRepo.save(dbUser);
+         return dbUser;
         }
         return null;
     }

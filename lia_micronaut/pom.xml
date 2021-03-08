@@ -33,6 +33,11 @@
 
   <dependencies>
     <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-inject</artifactId>
       <scope>compile</scope>
@@ -67,20 +72,13 @@
       <artifactId>swagger-annotations</artifactId>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <scope>provided</scope>
-    </dependency>
+
     <dependency>
       <groupId>io.micronaut.sql</groupId>
       <artifactId>micronaut-jdbc-hikari</artifactId>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>io.micronaut.data</groupId>
-      <artifactId>micronaut-data-hibernate-jpa</artifactId>
-    </dependency>
+
     <dependency>
       <groupId>io.micronaut.data</groupId>
       <artifactId>micronaut-data-jdbc</artifactId>

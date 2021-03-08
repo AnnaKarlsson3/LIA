@@ -19,12 +19,11 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private int id;
     private String username;
     private String email;
     private String password;
-
 
     @JsonIgnore
     public String getPassword() {
