@@ -1,6 +1,8 @@
 micronaut:
   application:
     name: lia_micronaut
+    max: 50
+
 datasources:
   default:
     url: jdbc:mysql://localhost:3306/liaproject_micronaut
@@ -12,8 +14,9 @@ datasources:
 
 jpa:
   default:
+    packages-to-scan:
+      - 'com.example'
     properties:
       hibernate:
-        bytecode:
-          provider: none
-    packages-to-scan: "com.example.entities"
+        hbm2ddl:
+          auto: update

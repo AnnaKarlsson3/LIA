@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Controller("/rest/user")
 public class UserController {
@@ -29,7 +30,7 @@ public class UserController {
 
     @Post("/login")
     public HttpResponse loginUser(@RequestBody User user){
-        User loggedInUser = userService.loginUser(user);
+        Optional<User> loggedInUser = userService.loginUser(user);
         if(loggedInUser == null){
             return HttpResponse.status(HttpStatus.UNAUTHORIZED).body("wrong email or password");
         }

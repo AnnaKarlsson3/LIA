@@ -3,30 +3,32 @@ package com.example.services;
 
 import com.example.entities.User;
 import com.example.repositories.UserRepo;
-import io.micronaut.core.annotation.Internal;
+import io.micronaut.context.annotation.Prototype;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.util.List;
+import java.util.Optional;
 
-@Singleton
+
 public class UserService {
 
     @Inject
     UserRepo userRepo;
 
     public User registerUser(User user){
-       /* User dbUser = userRepo.findByEmail(user.getEmail());
-        if(dbUser != null) {
+        Optional<User> dbUser = userRepo.findByEmail(user.getEmail());
+        System.out.println(dbUser);
+        if(!dbUser.isEmpty()) {
             return null;
-        }*/
+        }
         return userRepo.save(user);
     }
 
-    public User loginUser(User user){
-        User dbUser = userRepo.findById(user.getId());
-        if(dbUser != null) {
-            if (user.getPassword().equals(dbUser.getPassword())) {
+    public Optional<User> loginUser(User user){
+        Optional<User> dbUser = userRepo.findByEmail(user.getEmail());
+        if(!dbUser.isEmpty()) {
+            if (user.getPassword().equals(dbUser.get().getPassword())) {
                 return dbUser;
             }
         }
