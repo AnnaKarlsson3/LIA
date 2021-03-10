@@ -12,7 +12,6 @@ import javax.validation.constraints.NotNull;
 import java.util.Optional;
 
 @Repository
-@Introspected
 public interface UserRepo extends CrudRepository<User, Integer> {
 
     Optional<User> findByEmail(String email);
