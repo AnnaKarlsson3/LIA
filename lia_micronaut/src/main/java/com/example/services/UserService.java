@@ -10,7 +10,7 @@ import javax.inject.Singleton;
 import java.util.List;
 import java.util.Optional;
 
-
+@Singleton
 public class UserService {
 
     @Inject

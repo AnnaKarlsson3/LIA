@@ -1,6 +1,7 @@
 package com.example.repositories;
 
 import com.example.entities.User;
+import io.micronaut.core.annotation.Introspected;
 import io.micronaut.data.annotation.Id;
 import io.micronaut.data.annotation.Repository;
 
@@ -11,6 +12,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Optional;
 
 @Repository
+@Introspected
 public interface UserRepo extends CrudRepository<User, Integer> {
 
     Optional<User> findByEmail(String email);

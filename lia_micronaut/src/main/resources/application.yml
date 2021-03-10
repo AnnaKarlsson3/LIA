@@ -12,11 +12,4 @@ datasources:
     schema-generate: NONE
     dialect: MYSQL
 
-jpa:
-  default:
-    packages-to-scan:
-      - 'com.example'
-    properties:
-      hibernate:
-        hbm2ddl:
-          auto: update
+jpa.default.properties.hibernate.hbm2ddl.auto: update
